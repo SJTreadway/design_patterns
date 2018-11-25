@@ -4,6 +4,7 @@ public class GenericBee implements Bee {
     private String gender, role, name;
     private int age;
     private BeeType type;
+    private Object attributes; // fighting, stamina, health, harvesting
     
     public String getGender() {
         return gender;
@@ -51,16 +52,24 @@ public class GenericBee implements Bee {
                 System.out.println("Increased fighting attribute!");
                 break;
             case BUMBLE:
-                System.out.println("Harvest nectar speed increased!");
+                System.out.println("Increased harvesting attribute!");
                 break;
             case CARPENTER:
-                System.out.println("Work 1.5X longer than other bees!");
+                System.out.println("Increased stamina attribute!");
                 break;
             case SWEAT:
-                System.out.println("Takes 1.25X more damage than other bees!");
+                System.out.println("Increased health attribute!");
                 break;
             default:
                 System.out.println("No special attribute for this type of bee.");
         }
+    }
+
+    public Object getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(Object attributes) {
+        this.attributes = attributes;
     }
 }
