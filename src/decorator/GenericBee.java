@@ -3,7 +3,9 @@ package decorator;
 import java.util.Map;
 
 public class GenericBee {
-    private String gender, role, name;
+    private String gender;
+    private String role;
+    private String name;
     private int age;
     private BeeType type;
     private Map<String, Integer> attributes; // fighting, stamina, health, harvesting

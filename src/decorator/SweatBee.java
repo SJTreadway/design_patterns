@@ -3,7 +3,9 @@ package decorator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SweatBee extends GenericBee implements Bee {
+import strategy.BeeAction;
+
+public class SweatBee extends GenericBee implements Bee, BeeAction {
     private static final Map<String, Integer> attributes;
     static {
         attributes = new HashMap<String, Integer>();
@@ -19,5 +21,9 @@ public class SweatBee extends GenericBee implements Bee {
     
     public void specialAbility() {
         System.out.println("Increased health attribute!");
+    }
+    
+    public void performAction() {
+        System.out.println("You have decided to out live all of the other bees!");
     }
 }
