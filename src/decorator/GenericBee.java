@@ -6,6 +6,16 @@ public class GenericBee {
     private BeeType type;
     private Object attributes; // fighting, stamina, health, harvesting
     
+    public GenericBee (String gender, String role, String name, 
+            int age, BeeType type, Object attributes) {
+        this.setGender(gender);
+        this.setRole(role);
+        this.setName(name);
+        this.setAge(age);
+        this.setType(type);
+        this.setAttributes(attributes);
+    }
+    
     public String getGender() {
         return gender;
     }
