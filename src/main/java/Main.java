@@ -55,16 +55,20 @@ public class Main {
         
         System.out.println("Creating a HoneyBee, BumbleBee, CarpenterBee, and SweatBee...");
         
-        HoneyBee honeybee = new HoneyBee("Honey Bee 1", "male", "harvester", 3);
-        BumbleBee bumblebee = new BumbleBee("Bumble Bee 1", "male", "fighter", 5);
-        CarpenterBee carpenterbee = new CarpenterBee("Carpenter Bee 1", "female", "worker", 2);
-        SweatBee sweatbee = new SweatBee("Sweat Bee 1", "female", "worker", 1);
-        
         System.out.print("\nSpecial Ability for each type of Bee: \n");
+        
+        HoneyBee honeybee = new HoneyBee("Honey Bee 1","male","harvester",3);
         honeybee.specialAbility();
+        
+        BumbleBee bumblebee = new BumbleBee("Bumble Bee 1","male","fighter",5);
         bumblebee.specialAbility();
+        
+        CarpenterBee carpenterbee = new CarpenterBee("Carpenter Bee 1","female","worker",2);
         carpenterbee.specialAbility();
+        
+        SweatBee sweatbee = new SweatBee("Sweat Bee 1","female","worker",1);
         sweatbee.specialAbility();
+
         System.out.println("------------------------------------------------------\n\n");
         
         // STRATEGY Design Pattern

@@ -7,6 +7,7 @@ import strategy.BeeAction;
 
 public class HoneyBee extends GenericBee implements Bee, BeeAction {
     private static final Map<String, Integer> attributes;
+    
     static {
         attributes = new HashMap<String, Integer>();
         attributes.put("fighting", 1);

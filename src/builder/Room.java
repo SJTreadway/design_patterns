@@ -1,10 +1,15 @@
 package builder;
 
 public class Room {
-    private int length, width;
+    private int length;
+    private int width;
     private String name;
     
-    public Room (String name, int len, int wdth) {
+    /**
+     *  Room class that will inserted into a Beehive.
+     *  @author Steven Treadway (streadw2)
+     */
+    public Room(String name, int len, int wdth) {
         this.setName(name);
         this.setLength(len);
         this.setWidth(wdth);
