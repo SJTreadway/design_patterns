@@ -1,14 +1,14 @@
 package test;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class ApiaryTests {
-    
+public class BeehiveTests {
+
     @Test
     public void test() {
         fail("Not yet implemented");
     }
-    
+
 }
