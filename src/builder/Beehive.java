@@ -18,6 +18,14 @@ public class Beehive {
         return rooms;
     }
     
+    public boolean isEmpty() {
+        return rooms.size() == 0;
+    }
+    
+    public int numRooms() {
+        return rooms.size();
+    }
+    
     private Beehive (BeehiveBuilder builder) {
         this.rooms = builder.rooms;
     }
