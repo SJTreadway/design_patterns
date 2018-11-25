@@ -80,7 +80,7 @@ task fatJar(type: Jar) {
 sourceSets {
     main {
         java {
-            srcDir 'src/main'
+            srcDir 'src/'
         }
     }
     test {
