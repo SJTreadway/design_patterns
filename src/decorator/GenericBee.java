@@ -1,19 +1,21 @@
 package decorator;
 
+import java.util.Map;
+
 public class GenericBee {
     private String gender, role, name;
     private int age;
     private BeeType type;
-    private Object attributes; // fighting, stamina, health, harvesting
+    private Map<String, Integer> attributes; // fighting, stamina, health, harvesting
     
-    public GenericBee (String gender, String role, String name, 
-            int age, BeeType type, Object attributes) {
+    public GenericBee (String name, String gender, String role, 
+            int age, BeeType type, Map<String, Integer> attributes) {
         this.setGender(gender);
         this.setRole(role);
         this.setName(name);
         this.setAge(age);
         this.setType(type);
-        this.setAttributes(attributes);
+        this.attributes = attributes;
     }
     
     public String getGender() {
@@ -55,12 +57,12 @@ public class GenericBee {
     public void setType(BeeType type) {
         this.type = type;
     }
-
-    public Object getAttributes() {
+    
+    public Map<String, Integer> getAttributes() {
         return attributes;
     }
 
-    public void setAttributes(Object attributes) {
-        this.attributes = attributes;
+    public int getAttribute(String key) {
+        return attributes.get(key);
     }
 }
