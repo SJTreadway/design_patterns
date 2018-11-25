@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Beehive {
     
-    private Map<Integer, Room> rooms = new HashMap<>();
+    private Map<Integer, Room> rooms;
 
     public Map<Integer, Room> getRooms() {
         return rooms;
