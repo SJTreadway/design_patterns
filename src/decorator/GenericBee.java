@@ -1,6 +1,6 @@
 package decorator;
 
-public class GenericBee implements Bee {
+public class GenericBee {
     private String gender, role, name;
     private int age;
     private BeeType type;
@@ -44,25 +44,6 @@ public class GenericBee implements Bee {
     
     public void setType(BeeType type) {
         this.type = type;
-    }
-    
-    public void specialAbility() {
-        switch (this.type) {
-            case HONEY:
-                System.out.println("Increased harvesting attribute!");
-                break;
-            case BUMBLE:
-                System.out.println("Increased fighting attribute!");
-                break;
-            case CARPENTER:
-                System.out.println("Increased stamina attribute!");
-                break;
-            case SWEAT:
-                System.out.println("Increased health attribute!");
-                break;
-            default:
-                System.out.println("No special attribute for this type of bee.");
-        }
     }
 
     public Object getAttributes() {
