@@ -4,17 +4,24 @@ plugins {
 }
 
 apply plugin: 'application'
+apply plugin: 'java'
 
 ///////////////////////////////////////////////////////////////////////////
 // Define Main class
 ///////////////////////////////////////////////////////////////////////////
 mainClassName = 'main.java.Main'
 
+compileJava.options.encoding = 'UTF-8'
+
 ///////////////////////////////////////////////////////////////////////////
 // Repositories and dependencies for code go here
 ///////////////////////////////////////////////////////////////////////////
 repositories {
-  mavenCentral()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'junit:junit:4.12'
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -22,16 +29,16 @@ repositories {
 ///////////////////////////////////////////////////////////////////////////
 apply plugin: 'checkstyle'
 checkstyle {
-  // Keep checkstyle a little quieter
-  ignoreFailures = true
-  showViolations = false
+    // Keep checkstyle a little quieter
+    ignoreFailures = true
+    showViolations = false
 }
 
 tasks.withType(Checkstyle) {
-  reports {
-    html.enabled = true
-    xml.enabled = false
-  }
+    reports {
+        html.enabled = true
+        xml.enabled = false
+    }
 }
 checkstyle {
     toolVersion = "8.8"
@@ -44,14 +51,42 @@ checkstyle {
 
 // The part below needs to be included for Spotbugs
 spotbugs {
- toolVersion = '3.1.1'
- ignoreFailures = true
+    toolVersion = '3.1.1'
+    ignoreFailures = true
 }
 
 // To generate an HTML report instead of XML
 tasks.withType(com.github.spotbugs.SpotBugsTask) {
- reports {
-   xml.enabled = false
-   html.enabled = true
- }
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
 }
+
+///////////////////////////////////////////////////////////////////////////
+task fatJar(type: Jar) {
+    manifest {
+        attributes  \
+             'Main-Class' : 'main.java.main' ,  \
+             'Implementation-Version' : '2.0' ,  \
+             'Implementation-Title' : new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+    }
+    baseName = 'streadw2_design_patterns'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+///////////////////////////////////////////////////////////////////////////
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main'
+        }
+    }
+    test {
+        java {
+            srcDir 'src/test'
+        }
+    }
+}
+
