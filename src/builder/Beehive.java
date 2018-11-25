@@ -4,10 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
- * @author steventreadway
- * description: Beehive class that implements Builder design pattern.
- *
+ *  Beehive class that implements Builder design pattern.
+ *  @author Steven Treadway (streadw2)
  */
 
 public class Beehive {
@@ -26,20 +24,24 @@ public class Beehive {
         return rooms.size();
     }
     
-    private Beehive (BeehiveBuilder builder) {
+    public void addRoom(Room room) {
+        this.rooms.put(rooms.size() + 1, room);
+    }
+    
+    private Beehive(BeehiveBuilder builder) {
         this.rooms = builder.rooms;
     }
     
     //Builder Class
-    public static class BeehiveBuilder{
+    public static class BeehiveBuilder {
         
         private Map<Integer, Room> rooms = new HashMap<>();
         
-        public BeehiveBuilder(Room room){
+        public BeehiveBuilder(Room room) {
             this.rooms.put(rooms.size() + 1, room);
         }
         
-        public Beehive build(){
+        public Beehive build() {
             return new Beehive(this);
         }
 
