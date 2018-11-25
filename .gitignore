@@ -30,3 +30,7 @@ build/
 
 # gradle files
 .gradle/
+
+# Eclipse files
+.project
+.classpath
