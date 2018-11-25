@@ -1,5 +1,10 @@
 package decorator;
 
+/**
+ * BeeDecorator class is based on the Decorator design pattern.
+ * @author Steven Treadway (streadw2)
+ */
+
 public class BeeDecorator implements Bee {
     protected Bee bee;
     

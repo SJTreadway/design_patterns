@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *  Beehive class that implements Builder design pattern.
+ *  Beehive class is based on the Builder design pattern.
  *  @author Steven Treadway (streadw2)
  */
 
