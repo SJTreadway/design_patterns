@@ -49,10 +49,10 @@ public class GenericBee implements Bee {
     public void specialAbility() {
         switch (this.type) {
             case HONEY:
-                System.out.println("Increased fighting attribute!");
+                System.out.println("Increased harvesting attribute!");
                 break;
             case BUMBLE:
-                System.out.println("Increased harvesting attribute!");
+                System.out.println("Increased fighting attribute!");
                 break;
             case CARPENTER:
                 System.out.println("Increased stamina attribute!");
