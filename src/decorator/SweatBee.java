@@ -20,10 +20,10 @@ public class SweatBee extends GenericBee implements Bee, BeeAction {
     }
     
     public void specialAbility() {
-        System.out.println("Increased health attribute!");
+        System.out.println("The SweatBee's special ability is an increased health attribute!");
     }
     
     public void performAction() {
-        System.out.println("You have decided to out live all of the other bees!");
+        System.out.println("The SweatBee's responsibility is to out live all of the other bees!");
     }
 }

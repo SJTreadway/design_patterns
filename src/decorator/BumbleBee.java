@@ -20,10 +20,10 @@ public class BumbleBee extends GenericBee implements Bee, BeeAction {
     }
 
     public void specialAbility() {
-        System.out.println("Increased fighting attribute!");
+        System.out.println("The BumbleBee's special ability is an increased fighting attribute!");
     }
     
     public void performAction() {
-        System.out.println("You have decided to fight!");
+        System.out.println("The BumbleBee's responsibility is to fight!");
     }
 }

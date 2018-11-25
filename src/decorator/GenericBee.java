@@ -8,9 +8,13 @@ public class GenericBee {
     private String name;
     private int age;
     private BeeType type;
-    private Map<String, Integer> attributes; // fighting, stamina, health, harvesting
+    private Map<String, Integer> attributes; // fighting, stamina, health, harvesting - (1-5 range)
     
-    public GenericBee (String name, String gender, String role, 
+    /**
+     * GenericBee constructor. This class will be extended by each type of Bee.
+     * @author - Steven Treadway (streadw2)
+     */
+    public GenericBee(String name, String gender, String role, 
             int age, BeeType type, Map<String, Integer> attributes) {
         this.setGender(gender);
         this.setRole(role);

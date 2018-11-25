@@ -20,10 +20,10 @@ public class HoneyBee extends GenericBee implements Bee, BeeAction {
     }
     
     public void specialAbility() {
-        System.out.println("Increased harvesting attribute!");
+        System.out.println("The HoneyBee's special ability is an increased harvesting attribute!");
     }
     
     public void performAction() {
-        System.out.println("You have decided to harvest!");
+        System.out.println("The HoneyBee's responsibility is to harvest!");
     }
 }

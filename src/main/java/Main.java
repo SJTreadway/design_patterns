@@ -3,6 +3,10 @@ package main.java;
 import builder.Beehive;
 import builder.Beehive.BeehiveBuilder;
 import builder.Room;
+import decorator.BumbleBee;
+import decorator.CarpenterBee;
+import decorator.HoneyBee;
+import decorator.SweatBee;
 import singleton.Apiary;
 
 public class Main {
@@ -26,13 +30,13 @@ public class Main {
         System.out.println("---------------Builder design pattern-----------------");
         Room room = new Room("Main Room", 50, 60);
         BeehiveBuilder bhb = new BeehiveBuilder(room);
-        System.out.println("BeehiveBuilder created, containing " + room.getName() + " with these dimensions: " 
-        + room.getLength() + "x" + room.getWidth());
+        System.out.println("BeehiveBuilder created, containing " + room.getName() 
+                + " with these dimensions: " + room.getLength() + "x" + room.getWidth());
         Beehive bh = bhb.build();
         System.out.println("How many rooms does our beehive contain? " + bh.numRooms());
         Room room2 = new Room("Game Room", 25, 20);
         System.out.println("Game Room created with these dimensions: " 
-        + room2.getLength() + "x" + room2.getWidth());
+                + room2.getLength() + "x" + room2.getWidth());
         System.out.println("Adding Game Room to our Beehive...");
         bh.addRoom(room2);
         System.out.println("How many rooms does our beehive contain? " + bh.numRooms());
@@ -40,7 +44,23 @@ public class Main {
         
         // DECORATOR Design Pattern
         System.out.println("---------------Decorator design pattern---------------");
+        System.out.println("Creating a HoneyBee, BumbleBee, CarpenterBee, and SweatBee...");
+        HoneyBee honeybee = new HoneyBee("Honey Bee 1", "male", "harvester", 3);
+        BumbleBee bumblebee = new BumbleBee("Bumble Bee 1", "male", "fighter", 5);
+        CarpenterBee carpenterbee = new CarpenterBee("Carpenter Bee 1", "female", "worker", 2);
+        SweatBee sweatbee = new SweatBee("Sweat Bee 1", "female", "worker", 1);
         
+        System.out.print("\nSpecial Ability for each type of Bee: \n");
+        honeybee.specialAbility();
+        bumblebee.specialAbility();
+        carpenterbee.specialAbility();
+        sweatbee.specialAbility();
+        
+        System.out.print("\nList of actions for each type of Bee: \n");
+        honeybee.performAction();
+        bumblebee.performAction();
+        carpenterbee.performAction();
+        sweatbee.performAction();
         System.out.println("------------------------------------------------------\n\n");
         
         // STRATEGY Design Pattern

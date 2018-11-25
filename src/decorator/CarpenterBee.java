@@ -20,10 +20,10 @@ public class CarpenterBee extends GenericBee implements Bee, BeeAction {
     }
     
     public void specialAbility() {
-        System.out.println("Increased stamina attribute!");
+        System.out.println("The CarpenterBee's special ability is an increased stamina attribute!");
     }
     
     public void performAction() {
-        System.out.println("You have decided to work harder!");
+        System.out.println("The CarpenterBee's responsibility is to work!");
     }
 }
